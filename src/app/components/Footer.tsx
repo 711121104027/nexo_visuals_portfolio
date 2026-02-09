@@ -110,7 +110,7 @@ w-[320px] sm:w-[260px] md:w-[300px] lg:w-[320px] h-11"
               </a>
 
               <a
-                href="https://www.linkedin.com/in/duraisaravanakkumar/"
+                href="https://www.linkedin.com/in/nexo-visuals-261ab63ab/"
                 target="_blank"
                 className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-white transition-all"
               >
@@ -118,7 +118,7 @@ w-[320px] sm:w-[260px] md:w-[300px] lg:w-[320px] h-11"
               </a>
 
               <a
-                href="https://www.behance.net/nexovisuals"
+                href="https://www.behance.net/nexovisuals1"
                 target="_blank"
                 className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-white transition-all"
               >

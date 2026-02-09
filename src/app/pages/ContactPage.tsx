@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin, Send, Linkedin } from "lucide-react";
 import { Input } from "@/app/components/ui/input";
@@ -16,13 +16,14 @@ import { FaLinkedinIn } from "react-icons/fa6";
 
 
 
+
 export function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     whatsapp: "",
-    service: "",
+    services: [] as string[],
     message: "",
   });
 
@@ -43,6 +44,26 @@ export function ContactPage() {
     "Other",
   ];
 
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setDropdownOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
@@ -54,7 +75,7 @@ Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
 WhatsApp: ${formData.whatsapp || "Not provided"}
-Service: ${formData.service}
+Services: ${formData.services.join(", ")}
 Message: ${formData.message}`;
 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
@@ -63,6 +84,7 @@ Message: ${formData.message}`;
     const emailSubject = `New Enquiry: ${formData.service}`;
     const emailBody = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AWhatsApp: ${formData.whatsapp || "Not provided"}%0D%0AService: ${formData.service}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
     const emailUrl = `mailto:nexovisualss@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
 
     // Open WhatsApp
     window.open(whatsappUrl, "_blank");
@@ -265,7 +287,7 @@ Message: ${formData.message}`;
 
                     {/* LinkedIn */}
                     <motion.a
-                      href="https://www.linkedin.com/in/duraisaravanakkumar/"
+                      href="https://www.linkedin.com/in/nexo-visuals-261ab63ab/"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1, y: -4 }}
@@ -291,7 +313,7 @@ Message: ${formData.message}`;
 
                     {/* Behance */}
                     <motion.a
-                      href="https://www.behance.net/nexovisuals"
+                      href="https://www.behance.net/nexovisuals1"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1, y: -4 }}
@@ -366,26 +388,74 @@ Message: ${formData.message}`;
                     />
                   </div>
 
-                  <div>
-                    <Label htmlFor="service" className="text-sm md:text-base mb-2 block">
-                      Service Required *
+                  <div className="relative" ref={dropdownRef}>
+                    <Label className="text-sm md:text-base mb-2 block">
+                      Services Required *
                     </Label>
-                    <Select
-                      required
-                      value={formData.service}
-                      onValueChange={(value) => setFormData({ ...formData, service: value })}
+
+                    {/* Dropdown button */}
+                    <div
+                      onClick={() => setDropdownOpen(!dropdownOpen)}
+                      className="h-10 rounded-xl border border-gray-300 flex items-center px-3 cursor-pointer"
                     >
-                      <SelectTrigger className="h-9 md:h-10 rounded-xl border-gray-300 focus:border-orange-500">
-                        <SelectValue placeholder="Select a service" />
-                      </SelectTrigger>
-                      <SelectContent>
+                      {formData.services.length > 0
+                        ? `${formData.services.length} selected`
+                        : "Select services"}
+                    </div>
+
+                    {/* Dropdown list */}
+                    {dropdownOpen && (
+                      <div className="absolute z-20 mt-2 w-full bg-white border rounded-xl shadow-lg max-h-52 overflow-y-auto p-2">
                         {services.map((service) => (
-                          <SelectItem key={service} value={service}>
+                          <label
+                            key={service}
+                            className="flex items-center gap-2 p-2 hover:bg-gray-50 rounded cursor-pointer"
+                          >
+                            <input
+                              type="checkbox"
+                              checked={formData.services.includes(service)}
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setFormData({
+                                    ...formData,
+                                    services: [...formData.services, service],
+                                  });
+                                } else {
+                                  setFormData({
+                                    ...formData,
+                                    services: formData.services.filter((s) => s !== service),
+                                  });
+                                }
+                              }}
+                            />
                             {service}
-                          </SelectItem>
+                          </label>
                         ))}
-                      </SelectContent>
-                    </Select>
+                      </div>
+                    )}
+
+                    {/* Selected tags */}
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {formData.services.map((s) => (
+                        <div
+                          key={s}
+                          className="flex items-center gap-2 bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm"
+                        >
+                          {s}
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setFormData({
+                                ...formData,
+                                services: formData.services.filter((item) => item !== s),
+                              })
+                            }
+                          >
+                            ×
+                          </button>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
                   <div>
