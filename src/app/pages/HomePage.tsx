@@ -24,8 +24,8 @@ import hospital from "../../assets/hospital.png";
 import studio from "../../assets/studio.png";
 import productDesign from "../../assets/product_design.png";
 import poster from "../../assets/poster.jpeg";
-import logo1 from "../../assets/logo1.png";
-import dsignpath from "../../assets/dsignpath_web_design.jpeg";
+import heroImage from "../../assets/hero_image.jpeg";
+
 
 
 const services = [
@@ -191,7 +191,7 @@ export function HomePage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1770003354677-7c3b06d302e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3b3Jrc3BhY2UlMjBjcmVhdGl2ZSUyMGRlc2t8ZW58MXx8fHwxNzcwMjgwNjQxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')`,
+              backgroundImage: `url(${heroImage})`,
             }}
           />
           {/* Dark Overlay */}
