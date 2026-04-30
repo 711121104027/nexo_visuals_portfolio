@@ -6,9 +6,18 @@ import realEstate from "../../assets/real_estate.png";
 import hospital from "../../assets/hospital.png";
 import studio from "../../assets/studio.png";
 import productDesign from "../../assets/product_design.png";
-import poster from "../../assets/poster.jpeg";
+import poster from "../../assets/poster.png";
 import logo1 from "../../assets/logo1.png";
 import dsignpath from "../../assets/dsignpath_web_design.jpeg";
+import Ghee from "../../assets/surabi_ghee.png";
+import VM_Banner from "../../assets/VM Banner.png";
+import K_poster from "../../assets/K_poster.png";
+import K_flyer from "../../assets/K_flyer.png";
+import Aura from "../../assets/Aura.png";
+import PCP_logo from "../../assets/PCP_logo.png";
+import SA_logo from "../../assets/SA_logo.png";
+import GH_logo from "../../assets/GH_logo.jpeg";
+import SVL_website from "../../assets/SVL_website.png";
 import { useNavigate } from "react-router";
 
 
@@ -79,6 +88,69 @@ const projects: Project[] = [
     type: "Web Development",
     image: dsignpath,
   },
+  {
+    id: 9,
+    title: "Surbai Ghee Packaging Design",
+    category: "Design",
+    type: "Product Design",
+    image: Ghee,
+  },
+  {
+    id: 10,
+    title: "Website Banner Design",
+    category: "Design",
+    type: "Banner Design",
+    image: VM_Banner,
+  },
+  {
+    id: 11,
+    title: "CII Womens Workshop Poster Design",
+    category: "Design",
+    type: "Poster Design",
+    image: K_poster,
+  },
+  {
+    id: 12,
+    title: "CII Selfie With Voter Flyer Design",
+    category: "Design",
+    type: "Flyer Design",
+    image: K_flyer,
+  },
+  {
+    id: 13,
+    title: "Aura Logo Design",
+    category: "Design",
+    type: "Logo Design",
+    image: Aura,
+  },
+  {
+    id: 14,
+    title: "PCP Logo Design",
+    category: "Design",
+    type: "Logo Design",
+    image: PCP_logo,
+  },
+  {
+    id: 15,
+    title: "SA Logo Design",
+    category: "Design",
+    type: "Logo Design",
+    image: SA_logo,
+  },
+  {
+    id: 16,
+    title: "GH Logo Design",
+    category: "Design",
+    type: "Logo Design",
+    image: GH_logo,
+  },
+  {
+    id: 17,
+    title: "SVL Website Development",
+    category: "Web",
+    type: "Web Development",
+    image: SVL_website,
+  }
 ];
 
 
@@ -207,11 +279,11 @@ export function ProjectsPage() {
                   className="group cursor-pointer"
                   onClick={() => navigate("/contact")}
                 >
-                  <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-[4/3]">
+                  <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-[4/3] flex items-center justify-center">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     </div>

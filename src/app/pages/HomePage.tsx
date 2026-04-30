@@ -23,7 +23,7 @@ import realEstate from "../../assets/real_estate.png";
 import hospital from "../../assets/hospital.png";
 import studio from "../../assets/studio.png";
 import productDesign from "../../assets/product_design.png";
-import poster from "../../assets/poster.jpeg";
+import poster from "../../assets/poster.png";
 import heroImage from "../../assets/hero_image.jpeg";
 import surabi from "../../assets/Surbai.png";
 import GH from "../../assets/GH.png";
