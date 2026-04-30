@@ -19,11 +19,11 @@ export function Header() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
+          <NavLink to="/" className="flex items-center ml-10" onClick={() => setMobileMenuOpen(false)}>
             <motion.img
               src={logo}
               alt="Nexo Visuals"
-              className="h-12 w-auto"
+              className="h-11 w-auto"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             />

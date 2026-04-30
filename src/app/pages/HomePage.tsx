@@ -25,8 +25,14 @@ import studio from "../../assets/studio.png";
 import productDesign from "../../assets/product_design.png";
 import poster from "../../assets/poster.jpeg";
 import heroImage from "../../assets/hero_image.jpeg";
-
-
+import surabi from "../../assets/Surbai.png";
+import GH from "../../assets/GH.png";
+import PCP from "../../assets/PCP.png";
+import SA from "../../assets/SA.png";
+import SVL from "../../assets/SVL.png";
+import Freedom from "../../assets/Freedom.png";
+import CII from "../../assets/CII.png";
+import Mikado from "../../assets/Mikado.png";
 
 const services = [
   {
@@ -77,6 +83,17 @@ const services = [
     description: "Intelligent automation that transforms your business operations",
     color: "from-teal-500 to-green-500",
   },
+];
+
+const clients = [
+  { name: "Surabi", logo: surabi, size: "h-20"  },
+  { name: "Freedom Financial Services", logo: Freedom, size: "h-15" },
+  { name: "Shree Visaalakshi Lace", logo: SVL, size: "h-20" },
+  { name: "PCP Kids Wear", logo: PCP, size: "h-20" },
+  { name: "Grit & Hue", logo: GH, size: "h-20" },
+  { name: "Mikado", logo: Mikado, size: "h-13" },
+  { name: "SA Tex", logo: SA, size: "h-16" },
+  { name: "CII", logo: CII, size: "h-13" },
 ];
 
 const featuredProjects = [
@@ -420,6 +437,56 @@ export function HomePage() {
               </motion.button>
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+
+      {/* Clients Section */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-16 lg:px-24">
+
+          {/* Heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 text-lg tracking-wider mb-4 block">
+              OUR HAPPY CLIENTS
+            </span>
+
+            <h2 className="text-4xl md:text-5xl mb-4">Our Clients</h2>
+
+            <p className="text-gray-600 text-lg">
+              Our clients are our best testimonials
+            </p>
+          </motion.div>
+
+          {/* Clients Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+            {clients.map((client, index) => (
+              <motion.div
+                key={client.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className="bg-white rounded-2xl p-6 flex flex-col items-center justify-center text-center min-h-[140px] shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                {/* Logo */}
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className={`${client.size} w-auto object-contain mb-3 mx-auto`}
+                />
+              </motion.div>
+            ))}
+
+          </div>
         </div>
       </section>
 
