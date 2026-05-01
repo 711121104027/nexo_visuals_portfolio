@@ -18,6 +18,9 @@ import PCP_logo from "../../assets/PCP_logo.png";
 import SA_logo from "../../assets/SA_logo.png";
 import GH_logo from "../../assets/GH_logo.jpeg";
 import SVL_website from "../../assets/SVL_website.png";
+import VM_Banner_2 from "../../assets/VM_Banner_2.png";
+import Mikado_portfolio from "../../assets/Mikado_portfolio.png";
+import SA_Catalog from "../../assets/SA_Catlog.png"; 
 import { useNavigate } from "react-router";
 
 
@@ -150,6 +153,27 @@ const projects: Project[] = [
     category: "Web",
     type: "Web Development",
     image: SVL_website,
+  },
+  {
+    id: 18,
+    title: "Website Banner Design",
+    category: "Design",
+    type: "Banner Design",
+    image: VM_Banner_2,
+  },
+  {
+    id: 19,
+    title: "Mikado Portfolio Design",
+    category: "Design",
+    type: "Portfolio Design",
+    image: Mikado_portfolio,
+  },
+  {
+    id: 20,
+    title: "SA Catalog Design",
+    category: "Design",
+    type: "Catalog Design",
+    image: SA_Catalog,
   }
 ];
 
