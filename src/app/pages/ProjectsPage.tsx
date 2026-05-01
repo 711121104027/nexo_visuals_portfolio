@@ -19,7 +19,7 @@ import SA_logo from "../../assets/SA_logo.png";
 import GH_logo from "../../assets/GH_logo.jpeg";
 import SVL_website from "../../assets/SVL_website.png";
 import VM_Banner_2 from "../../assets/VM_Banner_2.png";
-import Mikado_portfolio from "../../assets/Mikado_portfolio.png";
+import Mikado_portfolio from "../../assets/mikado_portfolio.png";
 import SA_Catalog from "../../assets/SA_Catlog.png"; 
 import { useNavigate } from "react-router";
 
