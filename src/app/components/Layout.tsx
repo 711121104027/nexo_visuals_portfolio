@@ -1,3 +1,4 @@
+//src/app/components/Layout.tsx
 import { Outlet } from "react-router";
 import { Header } from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
