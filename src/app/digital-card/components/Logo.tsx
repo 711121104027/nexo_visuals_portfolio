@@ -58,7 +58,7 @@ export function Logo({ size }: LogoProps) {
 
       {/* Main Logo */}
       <motion.img
-        src="/logo.svg"
+        src="/logo.png"
         alt="Nexo Visuals"
         draggable={false}
         className="

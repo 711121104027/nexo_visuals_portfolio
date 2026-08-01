@@ -109,6 +109,57 @@ export function ProfileHeader() {
         ))}
       </motion.div>
 
+      {/* MSME Badge */}
+
+<motion.div
+  initial={{
+    opacity: 0,
+    y: 12,
+  }}
+  animate={{
+    opacity: 1,
+    y: 0,
+  }}
+  transition={{
+    delay: 0.82,
+    duration: 0.55,
+  }}
+  className="mt-6 flex justify-center"
+>
+  <div
+    className="
+      inline-flex
+      items-center
+      gap-3
+      rounded-full
+      border
+      border-white/70
+      bg-white/70
+      px-4
+      py-2.5
+      backdrop-blur-xl
+      shadow-[0_10px_24px_rgba(0,0,0,0.06)]
+    "
+  >
+    <img
+      src="/msme.png"
+      alt="MSME Registered"
+      className="h-8 w-8 object-contain select-none"
+      draggable={false}
+    />
+
+    <div className="text-left">
+      <p className="text-[13px] font-semibold tracking-[0.08em] text-[#2F2F2F] uppercase">
+        MSME Registered
+      </p>
+
+      <p className="text-[10px] tracking-[0.12em] text-[#8A8A8A] uppercase">
+        Government of India
+      </p>
+    </div>
+  </div>
+</motion.div>
+
       {/* Accent Divider */}
       <motion.div
         initial={{

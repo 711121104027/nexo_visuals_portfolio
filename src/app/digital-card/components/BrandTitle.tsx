@@ -30,7 +30,7 @@ export function BrandTitle() {
             text-[#171717]
           "
           style={{
-            fontSize: "clamp(36px,9vw,48px)",
+            fontSize: "clamp(36px,9vw,36px)",
           }}
         >
           NEXO
