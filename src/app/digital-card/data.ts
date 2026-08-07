@@ -14,7 +14,7 @@ import {
 export const profile = {
   logo: "/namelogo.png",
 
-  name: "Dharanidharn S",
+  name: "Dharanidharan S",
 
   designation: [
     "Founder",
